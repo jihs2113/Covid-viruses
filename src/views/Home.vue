@@ -1,6 +1,7 @@
 <template>
   <main v-if="!loading">
-    Show Data
+    <DataTitle :text="title" :dataDate="dataDate" />
+    <DataBoxes :stats="stats" />
   </main>
 
   <main class="flex flex-col align-center justify-center text-center" v-else>
@@ -10,11 +11,18 @@
     <img :src="loadingImage" class="w-24 m-auto" alt=""/>
   </main>
 </template>
-
+ 
 <script>
+import DataTitle from '@/components/DataTitle'
+import DataBoxes from '@/components/DataBoxes'
+
+
 export default {
   name: 'Home',
-  components: {},
+  components: {
+    DataTitle,
+    DataBoxes
+  }, 
   data(){
     return{
       loading:true,
@@ -30,14 +38,13 @@ export default {
       const res = await fetch(`https://api.covid19api.com/summary`)
       const data = await res.json()
       return data
-    } 
+    }, 
   },
-  created(){
+  async created(){
     const data = await this.fetchCovidData()
-    //console.log(data)
-    this.dateDate = data.dateDate
+    this.dataDate = data.Date
     this.stats = data.Global
-    this.countries = data.countries
+    this.countries = data.Countries
     this.loading = true
   },
 }
