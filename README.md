@@ -3,17 +3,32 @@
 ## Project setup
 ```
 npm install
+vue create  vu-covid-tracker
 ```
 
-### Compiles and hot-reloads for development
+### using methods & grammer
 ```
-npm run serve
+fetch() / API / v-model / v-if v-else / v-for / 
+@click / @change="onchange()"
+this.@emit('')
+find()
+created()
+numberWithCommas(x){
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
+//글로벌적인 숫자같은것들을 바꿔주는것같다.
+moment
+computed:{
+    timestamp: function(){
+        return moment(this.dataDate).format('MMM do YYYY, h:mm:ss a')
+    }
+}
+
 ```
 
-### Compiles and minifies for production
+### tag
 ```
-npm run build
-```
+<select>
+<option>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
