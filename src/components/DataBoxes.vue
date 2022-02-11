@@ -10,7 +10,7 @@
             </div>
             <div class="text-2xl mb-4">
                  <span class="font-bold">Total:</span>
-                 {{stats.TotalConfirmed}}
+                 {{numberWithCommas(stats.TotalConfirmed)}}
             </div>
         </div>
         <!-- Box 2 -->
