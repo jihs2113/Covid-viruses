@@ -51,6 +51,7 @@ export default {
       return data
     },
     getCountryData(country){
+      console.log("country", country)
       this.stats =  country
       this.title = country.Country
     },

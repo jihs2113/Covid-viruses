@@ -19,11 +19,11 @@
 
             <div class="text-2xl mb-4">
                 <span class="font-bold">New:</span>
-                {{stats.NewDeaths}}
+                {{numberWithCommas(stats.NewDeaths)}}
             </div>
             <div class="text-2xl mb-4">
                  <span class="font-bold">Total:</span>
-                 {{stats.TotalDeaths}}
+                 {{numberWithCommas(stats.TotalDeaths)}}
             </div>
         </div>
     </div>
